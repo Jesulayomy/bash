@@ -46,22 +46,36 @@ echo "$divider"
 #First boss
 echo "You hear wings in the distance..."
 sleep 1
-echo "=====	THE ROYAL GRIFFIN	====="
+#boss loop
+bhealth="120"
+while [[ $bhealth -ge "10" ]]
+do
+
+echo "=====	THE ROYAL GRIFFIN	===== $(($bhealth * 50))"
 sleep 1
-echo "You have $health Health $USER"
-echo "$USER, Pick a number between 0 and 1"
+echo "$(whoami) You have $health Health left"
+echo "$(whoami), Pick a number between 0 and 1"
 read attac
 sleep 1
 #Battle odds
-if [[ $attac == "$(($RANDOM % 2))" ]]; then
-	echo "You, $USER Defeated the Royal Griffin and gained 10 health"
+if [[ $attac == "$(( $RANDOM % 2 || $attac == "yen" ))" ]]; then
+	echo "You, $(whoami) attacked the Royal Griffin and did $damage Damage"
 	health="$(( $health + 10 ))"
+	bhealth="$(( $bhealth - $damage ))"
 else
 	echo "It sank it's talons into your shoulder, you are injured and lost 20 health"
 	health="$(( $health - 20 ))"
 fi
 echo " "
 echo "$divider"
+if [[ $health -le "0" ]]; then
+	exit 1
+else
+	echo " "
+fi
+
+done
+#boss loop ends
 
 
 #Current Hp
@@ -106,11 +120,17 @@ echo "$divider"
 
 
 #Final boss
-echo "=====	G R E G O I R E  D E  G O R G O N	 ====="
-bhealth="400"
-bdamage="20"
+bhealth="1000"
+bdamage="10"
+
+
+#looping...
+while [[ $bhealth -ge "1" ]]
+do
+
+echo "=====	G R E G O I R E  D E  G O R G O N	 =====$(($bhealth * 1000))"
 sleep 1
-echo "choose a weapon D for Dual Katanas, G for Golden Greatsword, S for Staff of Eredin, W for Witchs broom"
+echo "$(whoami), Choose a weapon: D for Dual Katanas, G for Golden Greatsword, S for Staff of Eredin, W for Witchs broom"
 read weapon
 
 #Weapon Choices
@@ -151,6 +171,7 @@ if [[ $attac == "$(( $RANDOM % 5))" || $attac == yen ]]; then
 			echo "++ Tyrant's Summit ++"
 		fi
 		echo "You did $damage Damage"
+		bhealth=$(( $bhealth - $damage ))
 	elif [[ $weapont == "Magic" && $classt == "Magician" ]]; then
 		damage="$(($damage + $(($damage / 2))))"
 		if [[ $weapon == "The Staff of Eredin" ]]; then
@@ -159,26 +180,32 @@ if [[ $attac == "$(( $RANDOM % 5))" || $attac == yen ]]; then
 			echo "++ Poisonous Sweep ++"
 		fi
 		echo "You did $damage Damage"
+		bhealth=$(( $bhealth - $damage ))
 	elif [[ $weapont == "Toy" && $classt == "Muppet" ]]; then
 		damage="$(($damage + $(($damage / 2))))"
 		echo "++ Rock Throw ++"
 		echo "You did $damage Damage"
+		bhealth=$(( $bhealth - $damage ))
 	else
 		echo "you did $damage Damage"
+		bhealth=$(( $bhealth - $damage ))
 	fi
-	echo "Gregoire de Gorgon falls to his knee, you Rip off his helmet, then his head"
-	echo "You gained 100 Health"
-	health="$(( $health + 100 ))"
+
+
+	echo "Gregoire de Gorgon staggers."
+	echo "You gained 40 Health"
+	health="$(( $health + 40 ))"
 else
-	echo "Youre hit by the force of his swords, Gorgon uses his weight on the greatsword, decimating you"
+	echo "Gergoire de Godgon"
+	echo "~~~~ Tyrant's Sword Crush ~~~~~"
 	health="$(( $health - 60 ))"
 fi
 
 #end Health
-echo "You finished with $health Health"
-if [[ $health > 1 ]]; then
+if [[ $health -ge "0" ]]; then
 	echo "Still got the moves"
 else
 	echo "You died bozo"
 	exit 1
 fi
+done
