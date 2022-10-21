@@ -106,7 +106,7 @@ echo "$divider"
 
 
 #Final boss
-echo "= = = = =		G R E G O I R E  D E  G O R G O N	 = = = = ="
+echo "=====	G R E G O I R E  D E  G O R G O N	 ====="
 bhealth="400"
 bdamage="20"
 sleep 1
@@ -147,20 +147,26 @@ if [[ $attac == "$(( $RANDOM % 5))" || $attac == yen ]]; then
 		damage="$(($damage + $(($damage / 2))))"
 		if [[ $weapon == "Both Dual Katanas" ]]; then
 			echo "++ Bloody Slashes ++"
-		elif [[ $weapon == "The Golden Greatsword" ]]; then
+		else
 			echo "++ Tyrant's Summit ++"
 		fi
 		echo "You did $damage Damage"
 	elif [[ $weapont == "Magic" && $classt == "Magician" ]]; then
 		damage="$(($damage + $(($damage / 2))))"
+		if [[ $weapon == "The Staff of Eredin" ]]; then
+			echo "++ Fiend Golem Crush ++"
+		else
+			echo "++ Poisonous Sweep ++"
+		fi
 		echo "You did $damage Damage"
 	elif [[ $weapont == "Toy" && $classt == "Muppet" ]]; then
 		damage="$(($damage + $(($damage / 2))))"
+		echo "++ Rock Throw ++"
 		echo "You did $damage Damage"
 	else
 		echo "you did $damage Damage"
 	fi
-	echo "G4egoire de Gorgon falls to his knee, you Rip off his helmet, then his head"
+	echo "Gregoire de Gorgon falls to his knee, you Rip off his helmet, then his head"
 	echo "You gained 100 Health"
 	health="$(( $health + 100 ))"
 else
