@@ -51,14 +51,14 @@ bhealth="120"
 while [[ $bhealth -ge "10" ]]
 do
 
-echo "=====	THE ROYAL GRIFFIN	===== $(($bhealth * 50))"
+echo "$health =====	THE ROYAL GRIFFIN	===== $(($bhealth * 50))"
 sleep 1
 echo "$(whoami) You have $health Health left"
 echo "$(whoami), Pick a number between 0 and 1"
 read attac
 sleep 1
 #Battle odds
-if [[ $attac == "$(( $RANDOM % 2 || $attac == "yen" ))" ]]; then
+if [[ ($attac == "$(( $RANDOM % 2 ))") || ( $attac == "yen" ) ]]; then
 	echo "You, $(whoami) attacked the Royal Griffin and did $damage Damage"
 	health="$(( $health + 10 ))"
 	bhealth="$(( $bhealth - $damage ))"
@@ -84,7 +84,7 @@ echo "$USER You currently have $health Health"
 #Second boss
 echo "ARH-WOOOOOOOOOOOOOOOOOOOO"
 sleep 1
-echo "=====	T H E   K I N G   O F   W O L V E S	====="
+echo "$health =====	T H E   K I N G   O F   W O L V E S	===== 10"
 sleep 1
 echo "Enter a number (0 / 1)"
 read attac
@@ -128,7 +128,7 @@ bdamage="10"
 while [[ $bhealth -ge "1" ]]
 do
 
-echo "=====	G R E G O I R E  D E  G O R G O N	 =====$(($bhealth * 1000))"
+echo "$health =====	G R E G O I R E  D E  G O R G O N	 =====$(($bhealth * 1000))"
 sleep 1
 echo "$(whoami), Choose a weapon: D for Dual Katanas, G for Golden Greatsword, S for Staff of Eredin, W for Witchs broom"
 read weapon
@@ -209,3 +209,9 @@ else
 	exit 1
 fi
 done
+sleep 2
+echo "With $weapon, you defeat the knight. sending his soul to outworld"
+echo "				Boss Defeated			"
+echo "You win, $(whoami)."
+exit 1
+
