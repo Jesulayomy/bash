@@ -14,3 +14,4 @@ echo "Lets pick up where we left off $user, we are currently at: $where"
 sleep 1
 
 echo "also, check your swp files"
+echo "What am I even Doing"
