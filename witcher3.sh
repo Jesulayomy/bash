@@ -213,5 +213,7 @@ sleep 2
 echo "With $weapon, you defeat the knight. sending his soul to outworld"
 echo "				Boss Defeated			"
 echo "You win, $(whoami)."
+sleep 3
+echo "This is where we say goodbye'
 exit 1
 
