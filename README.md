@@ -19,7 +19,7 @@ Tells the machine to run with bash. This file can be configured at startup to gi
 
 ### [Get-rich-quick](getrichquick.sh)
 This script reads user input and creates aliases, using a random parameter to perform "predictions"
-To run
+ To run
 ```commandline
 ./getrichquick.sh
 ```
@@ -28,8 +28,10 @@ To run
 
 ### [Witcher3](witcher3.sh)
 This script reads uses user input, conditionals and some randomized options to make a commandline interactive gaem(game)
-To run
+ To run
 ```commandline
 ./witcher3.sh
 ```
-![](resources/)
+Class/weapon choosing has effects in later stages
+![Classes](resources/wclass.png)
+![Weapons](resources/weapon.png)
