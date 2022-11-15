@@ -57,8 +57,8 @@ Class/weapon choosing has effects in later stages
   <tr>
   <td align="center"><a href="https://github.com/Jesulayomy"><img src="https://avatars.githubusercontent.com/u/113533393?s=96&v=4" width="80px;" alt=""/><br /><sub><b>Jesulayomy</b></sub></a></td>
   </tr>
+</table>
 
-<h2>📬 Contact</h2>
 You can reach me through:
 ![Twitter link](https://img.shields.io/badge/Twitter-%40Jesulayomi11-blue)
 ![Twitter Jesulayomi11](https://img.shields.io/twitter/url?style=for-the-badge&url=https%3A%2F%2Ftwitter.com%2FJesulayomi11)
