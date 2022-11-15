@@ -35,3 +35,10 @@ This script reads uses user input, conditionals and some randomized options to m
 Class/weapon choosing has effects in later stages
 ![Classes](resources/wclass.png)
 ![Weapons](resources/weapon.png)
+
+
+
+
+
+
+
