@@ -7,7 +7,7 @@ apt-get -y install nginx
 echo "Hello World!" | tee /var/www/html/index.nginx-debian.html
 echo "Ceci n'est pas une page" | tee /usr/share/nginx/html/custom_404.html
 # Disables Password authentication for ease of login
-echo -e "\tPasswordAuthentication no" | tee -a /etc/ssh/ssh_config
+echo -e "    PasswordAuthentication no" | tee -a /etc/ssh/ssh_config
 # Routes the page '/redirect_me' to a different page (Moved permanently condition)
 sed -i "s/server_name _;/server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/jesulayomy permanent;\n\n\terror_page 404 \/custom_404.html;\n\tlocation = \/custom_404.html {\n\t\troot \/usr\/share\/nginx\/html;\n\t\tinternal;\n\t}/" /etc/nginx/sites-available/default
 # Adds the custom X-Served-By Header to the default file
