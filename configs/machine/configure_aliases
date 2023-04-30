@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# adds my most used aliases and customized prompt to the bash rc file
+
+echo -e "# added by configure_aliases script from github.com/jesulayomy/configs/" | tee -a ~/.bashrc > ~/configure_aliases_output
+echo -e "# C-compilation options\nalias gcce='gcc -Wall -Werror -Wextra -pedantic -std=gnu89'\n" | tee -a ~/.bashrc > ~/configure_aliases_output
+echo -e "# Permissions Modifier\nalias x='chmod +x'\n" | tee -a ~/.bashrc > ~/configure_aliases_output
+echo -e "# Good colorised prompt for PS1 and PS2\nPS1=\"\\[\\e[0;32m\\]/\\W \\[\\e[0;35m\\]\\$ \\[\\033[0m\\]\"\nPS2=\"\\e[0;36m\\]-> \\[\\033[0m\\]\"" | tee -a ~/.bashrc > ~/configure_aliases_output

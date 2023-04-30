@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# adds the vimrc needed config for formatting text
+
+echo -e "\" added by configure_vim script from github.com/jesulayomy/configs/\n" | tee -a ~/.vimrc > ~/configure_vim_output
+echo -e "filetype indent on\nfiletype plugin on\nset number\nsyntax enable\nset cindent\nset autoindent\nhighlight ColorColumn ctermbg=gray\nset colorcolumn=80" | tee -a ~/.vimrc > ~/configure_vim_output
