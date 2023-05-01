@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Applies all configs
+
+source ./configure_aliases
+source ./configure_vim
+echo -e "\n\nAliases and Vimrc Done\n\n"
+
+source ./configure_sandbox
+echo -e "\n\nBuild essentials, Make, Cmake, Unzip, Stderred, Valgrind Done\n\n"
+
+source ./configure_python3
+echo -e "\n\nPython Upgraded to 3.10\n\n"
+
+source ./configure_betty
+echo -e "\n\nBetty Done\n\n"

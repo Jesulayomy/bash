@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # Configures a server to work with nginx
-# Watch out for errors and note which scripts fail
 apt-get -y update
 apt-get -y install nginx
 # Adds the Default and 404 pages to the html folder with proper content

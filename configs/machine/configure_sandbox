@@ -2,24 +2,31 @@
 # Installs needed software on new ubuntu 20+ machine
 
 # Move to / directory
-cd /
 apt-get -y update
 apt-get -y upgrade
+apt-get -y install apt-utils
 # Install unzip and make utility
 apt-get -y install unzip
 apt-get -y install build-essential
 apt-get -y install make
-
+apt-get -y install cmake
 apt-get -y install valgrind
 # Download and install stderred
+cd /
 wget https://github.com/sickill/stderred/archive/refs/heads/master.zip
 unzip master.zip
+rm master.zip
 cd stderred-master/
 make
-export LD_PRELOAD="/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
+export LD_PRELOAD="/stderred-master/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
 echo -e "export LD_PRELOAD=\"/stderred/build/libstderred.so\${LD_PRELOAD:+:\$LD_PRELOAD}\"" | tee -a ~/.bashrc
-# Check Versions
+cd ~
+echo -e "\n\n"
+echo "Done."
+echo -e "\n\n"
 sleep 2
+# Check Versions
+clear
 apt-get -y update
 apt-get -y upgrade
 unzip --version

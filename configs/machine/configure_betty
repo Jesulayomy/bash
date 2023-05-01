@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Adds betty to the system
 
+cd ~
 wget https://github.com/holbertonschool/Betty/archive/refs/heads/master.zip
 unzip master.zip
+rm master.zip
 source ./Betty-master/install.sh
