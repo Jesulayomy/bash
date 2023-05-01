@@ -6,3 +6,10 @@ apt-get -y upgrade
 apt-get -y install unzip
 apt-get -y install build-essential
 apt-get -y install make
+apt-get -y install valgrind
+sleep 2
+apt-get -y update
+apt-get -y upgrade
+unzip --version
+make --version
+valgrind --version
