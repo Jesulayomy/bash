@@ -1,0 +1,11 @@
+#!/bin/bash
+
+STREAK=$((STREAK + 1))
+export STREAK
+
+cd ~/bash/
+echo "Day $STREAK" >> streak.counter
+
+git add .
+git commit -m "Day $STREAK"
+git push
