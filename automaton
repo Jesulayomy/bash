@@ -4,7 +4,7 @@ STREAK=$((STREAK + 1))
 export STREAK
 
 cd ~/bash/
-echo "Day $STREAK" >> streak.counter
+wc -l streak.counter >> streak.counter
 
 git add .
 git commit -m "Day $STREAK"
