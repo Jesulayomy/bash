@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Html test
+
+cat <<- _EOF_
+	<html>
+	<head>
+	</head>
+	<body>
+		This is the body
+	</body>
+	</html>
+_EOF_
